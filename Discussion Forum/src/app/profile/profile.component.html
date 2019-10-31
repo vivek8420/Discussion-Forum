@@ -1,0 +1,93 @@
+
+
+<style>
+html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+</style>
+<br><br><br><br>
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:50px">    
+  <!-- The Grid -->
+  <div class="w3-row">
+    <!-- Left Column -->
+    <div class="w3-col m3">
+      <!-- Profile -->
+      <br>
+      <div class="w3-card w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center">{{user.name}}</h4>
+         <p class="w3-center"><img src="/assets/avatar2.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+         <hr>
+         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> {{user.user_id}}</p>
+         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i>{{user.email}}</p>
+         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i>{{user.skills}}</p>
+        </div>
+      </div>
+      <br>
+      
+    <!-- End Left Column -->
+    </div>
+    
+    <!-- Middle Column -->
+    <div class="w3-col m7">
+      <div *ngFor = "let blog of AllUserBlog">
+        
+      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+      
+        <p>  {{blog.title}} </p>
+         <button class="badge badge-primary">{{blog.likes}}Likes</button>
+    <br>
+        <span style="float: right;">  {{blog.date | date:'d/M/y'}}
+      </span>
+
+      </div>
+      
+      </div>
+      
+    <!-- End Middle Column -->
+    </div>
+    
+    <!-- Right Column -->
+    <div class="w3-col m2">
+      
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+<!-- End Page Container -->
+</div>
+<br>
+
+ 
+<script>
+// Accordion
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-theme-d1";
+  } else { 
+    x.className = x.className.replace("w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-theme-d1", "");
+  }
+}
+
+
+
+
+
+
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+

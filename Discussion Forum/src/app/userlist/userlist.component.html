@@ -1,0 +1,59 @@
+
+
+<style>
+html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+</style>
+<br><br><br><br>
+<!-- Page Container -->
+
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:50px">    
+  <!-- The Grid -->
+  <div class="w3-row">
+    <!-- Left Column -->
+    <div class="w3-col m3">
+      <!-- Profile -->
+      <br>
+      <div class="w3-card w3-round w3-white">
+        <div class="w3-container">
+   
+        </div>
+      </div>
+      <br>
+      
+    <!-- End Left Column -->
+    </div>
+    
+    <!-- Middle Column -->
+    <div class="w3-col m7">
+      <div *ngFor = "let user of AllUser">
+       <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+        <img src="/assets/avatar2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right w3-margin-bottom " style="width:50px">
+        <h4><a routerLink="/profile//{{user.user_id}}" routerLinkActive="active">{{user.user_id}}</a></h4>
+       <span > skills:  {{user.skills}}
+        </span>
+        <span *ngIf = "login_user == 'admin' ">
+        <button class="badge badge-danger float-right" type="submit" 
+                              (click)="deleteUser(user.user_id)">delete</button>
+        </span>
+   <br>
+
+      </div>
+      
+      
+      </div>
+      
+    <!-- End Middle Column -->
+    </div>
+    
+    <!-- Right Column -->
+    <div class="w3-col m2">
+      
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+<!-- End Page Container -->
+</div>
+<br>

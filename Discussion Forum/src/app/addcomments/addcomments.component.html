@@ -1,0 +1,67 @@
+
+
+<br>  <br>  <br>  <br> 
+<!-- main -->
+  <div class="row">
+    <div class="col-md-2 ">
+  
+    </div>
+    <div class="col-md-8">
+      <div>
+  <br>
+  <br>
+  <h1>{{blog.title}}</h1>
+<div class="card">
+  <div class="card-header">
+    <div [innerHTML]="blog.text"></div>
+    <div *ngIf="flag">
+    <button class="badge badge-primary" type="submit" (click)="IncBlogLikes(blog._id,blog.likes)">{{blog.likes}} Likes</button>
+    </div>
+    <b>
+    <span><p style="float:right;font-size:12px;margin-top: -15px;">{{blog.user_id}}<br>{{blog.date|date:'d/M/y'}}
+          </p> </span>
+       </b>   
+    <br></div>
+    <div *ngFor="let comment of AllComments">
+  <div class="card-body" style="border-bottom:1px solid rgba(0,0,0,.125) ;">
+      <span>{{comment.text}}</span>
+         <span><p style="float:right;font-size:12px;margin-top: 10px;">{{comment.user_id}}<br>{{comment.date|date:'d/M/y'}}
+</p></span>
+<br>
+<div *ngIf="flag">
+<button class="badge badge-primary" type="submit" (click)="IncCommentLikes(comment._id,comment.likes)">{{comment.likes}} Likes</button>
+
+<div *ngIf="login_user === comment.user_id || login_user == 'admin' ">
+    <button class="badge badge-danger" type="submit" (click)="deleteComment(comment._id)">delete</button>
+</div>
+</div>
+
+</div>
+<!--
+<a href="" style="margin-top:50px;"><span class="badge badge-primary">{{blog.likes}} Likes</span></a>
+-->     
+    </div>
+</div>
+         </div>
+
+  <br>  <br> 
+
+      <!-- post form -->
+    <div *ngIf="flag">
+      <form method="post">
+        <div class="input-group">
+          <input class="form-control" type="text" name="content" placeholder="Add a Comment..." #comment >
+          <span class="input-group-btn">
+            <button class="btn btn-success" type="submit" name="post" (click)="onSave(comment.value)">add comment</button>
+          </span>
+        </div>
+      </form>
+    </div>
+  
+</div>
+
+  <br>  <br>  <br>  <br>  <br> 
+    <div class="col-md-2">
+    </div>
+  </div>
+  <br><br><br>

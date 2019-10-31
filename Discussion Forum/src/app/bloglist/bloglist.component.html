@@ -1,0 +1,77 @@
+<br>  <br>  <br>  <br> 
+
+<!-- main -->
+  <div class="row">
+    <div class="col-md-2 ">
+  
+    </div>
+    <div class="col-md-8">
+      <!-- post form -->
+
+      <form method="post" action="">
+        <div class="input-group">
+          <input class="form-control" type="text" name="content" placeholder="Search a Blog...">
+          <span class="input-group-btn">
+            <button class="btn btn-info" type="submit" name="post">Search</button>
+          </span>
+        </div>
+      </form>
+
+    <br>
+
+        <div *ngIf="status">
+                  <span class="input-group-btn"> 
+                    <button class="btn btn-primary float-right" type="submit" (click)="changeFlag()">+add blog</button>
+                  </span>
+        </div>
+  <div>
+  <br>
+  <br>
+    <div class="panel panel-default">
+
+      <div *ngFor="let d of AllBlogs">
+          <div class="panel-footer" style="margin-top: -2px;" >
+
+                &nbsp;&nbsp;<span>25</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;<span> {{d.likes}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span><a routerLink="/addcomments/{{d._id}}"  routerLinkActive="active"> {{d.title}}</a></span>
+
+               <span><p style="float:right;font-size:12px;margin-top: 10px;"><a routerLink="/profile/{{login_user}}"  routerLinkActive="active" style="color: black;" >{{d.user_id}}</a><br>{{d.date|date:'d/M/y'}}
+                </p> </span>
+                <br>
+                <span> views</span> &nbsp;&nbsp;&nbsp;
+                <span> likes</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span> {{d.tags}}</span>
+                <span *ngIf="login_user === d.user_id || login_user == 'admin' ">
+                <button class="badge badge-danger" type="submit" (click)="deleteBlog(d._id)">delete</button>
+                </span>
+          </div>  
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div *ngIf="flag">
+     <form method="post" action="" #userForm="ngForm"   (ngSubmit)="onSave(userForm.value)">
+        <div class="input-group">
+          <br><input class="form-control" type="text" required name="title" placeholder="Add a title..."   [(ngModel)]="title">
+          <br><input class="form-control" type="text" required name="tags" placeholder="Add a tag..."   [(ngModel)]="tags"><br>
+         
+        <ejs-richtexteditor  name="blog_text" required type="text" [(ngModel)]="blog_text" >
+        </ejs-richtexteditor>
+
+          <span class="input-group-btn">  
+            <button class="btn btn-success" type="submit">post blog</button>
+          </span>
+        </div>
+      </form>
+  </div>
+    <!-- ./feed -->
+    <div style="padding-top:250px;"></div> 
+    
+  </div>
+  
+
+

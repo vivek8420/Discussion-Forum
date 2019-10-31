@@ -1,0 +1,96 @@
+
+a {
+    color: #3b5998;
+  }
+  
+  .navbar {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+  }
+  
+  .navbar-default {
+    background-color: #3b5998;
+    border-color: #3b5998;
+  }
+  
+  .navbar-default .navbar-brand {
+    color: #fff;
+  }
+  
+  .navbar-default .navbar-brand:focus,
+  .navbar-default .navbar-brand:hover {
+    color: #fff;
+  }
+  
+  .navbar-default .navbar-nav>li>a {
+    color: #fff;
+  }
+  
+  .navbar-default .navbar-nav>li>a:focus,
+  .navbar-default .navbar-nav>li>a:hover {
+    color: #fff;
+  }.block {
+    height: 60px;
+  }
+  
+  .inner {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 3px 5px;
+    
+  
+  }
+  .panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.05);
+}
+.panel-default {
+    border-color: #ddd;
+}
+.panel-footer {
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+  
+  .inner1 {
+    height: 35px;
+    float:left;
+  
+}
+  .inner2{
+    text-align: center;
+
+}
+  .sidenav {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:white;
+    overflow-x: hidden;
+    border-right:2px black;
+    padding-top: 20px;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    
+    border-right:2px black;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
